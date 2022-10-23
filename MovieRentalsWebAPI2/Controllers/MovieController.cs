@@ -39,8 +39,8 @@ namespace MovieRentalsWebAPI2.Controllers
         }
 
 
-        [HttpGet("{id}")]
-        [Route("GetMovie")]
+        [HttpGet]
+        [Route("GetMovie/{id}")]
         public async Task<ActionResult<Movies>> Get(int id)
         {
             var movie = MovieList.Find(m => m.id == id);
@@ -51,7 +51,6 @@ namespace MovieRentalsWebAPI2.Controllers
 
 
         [HttpPost]
-        [Route("InsertMovie")]
         public async Task<ActionResult<List<Movies>>> NewMovie(Movies movie)
         {
             MovieList.Add(movie);
