@@ -39,8 +39,7 @@ namespace MovieRentalsWebAPI2.Controllers
         }
 
 
-        [HttpGet]
-        [Route("GetMovie/{id}")]
+        [HttpGet("{id}")]   
         public async Task<ActionResult<Movies>> Get(int id)
         {
             var movie = MovieList.Find(m => m.id == id);
